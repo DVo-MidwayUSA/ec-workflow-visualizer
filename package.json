@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DVo-MidwayUSA/ec-workflow-visualizer/issues"
   },
-  "homepage": "https://github.com/DVo-MidwayUSA/ec-workflow-visualizer#readme"
+  "homepage": "https://github.com/DVo-MidwayUSA/ec-workflow-visualizer#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1"
+  }
 }
