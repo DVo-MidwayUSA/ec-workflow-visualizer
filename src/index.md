@@ -22,13 +22,26 @@ layout: layout.html
 
 <script>
     var database = firebase.database();
-    var toPrioritizeCt = database.ref('stats/toPrioritize');
-    toPrioritizeCt.on('value', function(snap) {
-        document.getElementById('toPrioritizeCount').textContent = snap.val();
-    });
+    
+    var el1 = document.getElementById('toPrioritizeCount');
+    doStuff(el1, 'stats/toPrioritize');
 
-    var prioritizeCt = database.ref('stats/prioritized');
-    prioritizeCt.on('value', function (snap) {
-        document.getElementById('prioritizedCount').textContent = snap.val();
-    });
+    var el2 = document.getElementById('prioritizedCount');
+    doStuff(el2, 'stats/prioritized');
+
+    function doStuff(el, ref) {
+        var toPrioritizeCt = database.ref(ref);
+        toPrioritizeCt.on('value', function(snap) {
+            
+            el.classList.add('badge-primary');
+            el.classList.remove('badge-secondary');
+            
+            el.textContent = snap.val();
+
+            setTimeout(function () {
+                el.classList.add('badge-secondary');
+                el.classList.remove('badge-primary');
+            }, 1000);
+        });
+    }
 </script>    
