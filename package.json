@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "preview": "http-server ./docs",
+    "clean": "rimraf ./docs",
+    "rebuild": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
