@@ -9,14 +9,14 @@
   <meta name="description" content="EC Workflow Visualizer">
   <meta name="author" content="dvo@midwayusacom">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/' | url }}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/' | url }}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/' | url }}favicon-16x16.png">
+  <link rel="manifest" href="{{ '/' | url }}site.webmanifest">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://dvo-midwayusa.github.io/ec-workflow-visualizer/css/styles.css" />
+  <link rel="stylesheet" href="{{ '/' | url }}css/styles.css" />
 </head>
 
 <body>
@@ -34,7 +34,7 @@
       firebase.initializeApp(config);
     </script>
   <div class="container-fluid">
-    <h1>EC Workflow</h1>
+    <h1><a href="{{ '/' | url }}">EC Workflow</a></h1>
     {{content}}
   </div>
 </body>

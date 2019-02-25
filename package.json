@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy --pathprefix=ec-workflow-visualizer",
     "watch": "eleventy --watch",
     "preview": "http-server ./docs",
     "clean": "rimraf ./docs",

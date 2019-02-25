@@ -4,7 +4,7 @@ module.exports = (eleventyConfig) => {
             input: 'src',
             output: 'docs',
         },
-        templateFormats: ['md', 'css', 'js', 'png', 'ico', 'webmanifest'],
+        templateFormats: ['html', 'md', 'css', 'js', 'png', 'ico', 'webmanifest'],
         passthroughFileCopy: true,
     }
 
