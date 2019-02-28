@@ -9,14 +9,14 @@
   <meta name="description" content="EC Workflow Visualizer">
   <meta name="author" content="dvo@midwayusacom">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/ec-workflow-visualizer/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/ec-workflow-visualizer/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/ec-workflow-visualizer/favicon-16x16.png">
-  <link rel="manifest" href="/ec-workflow-visualizer/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="/ec-workflow-visualizer/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
@@ -34,7 +34,7 @@
       firebase.initializeApp(config);
     </script>
   <div class="container-fluid">
-    <h1><a href="/ec-workflow-visualizer/">EC Workflow</a></h1>
+    <h1><a href="/">EC Workflow</a></h1>
     
 <h2>Feature System</h2>
 <div class="divider">
@@ -195,16 +195,15 @@
     el.forEach(e => count(e))
 
     function count(el) {
-        const ref = `stats/${el.dataset.count}`;
-        const toPrioritizeCt = database.ref(ref);
-        toPrioritizeCt.on('value', (snapshot) => {
-            updateValue(el, snapshot)
-            transition(el)
-        })
+        const stats = database.ref(`stats/${el.dataset.count}`)
+            .on('value', (snapshot) => {
+                updateValue(el, snapshot)
+                transition(el)
+            })
     }
 
     function updateValue(el, snapshot) {
-        el.textContent = snapshot.val()
+        el.textContent = snapshot.val().Count
     }
 
     function transition(el) {

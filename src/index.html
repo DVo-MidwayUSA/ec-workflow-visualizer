@@ -161,16 +161,15 @@ layout: layout.html
     el.forEach(e => count(e))
 
     function count(el) {
-        const ref = `stats/${el.dataset.count}`;
-        const toPrioritizeCt = database.ref(ref);
-        toPrioritizeCt.on('value', (snapshot) => {
-            updateValue(el, snapshot)
-            transition(el)
-        })
+        const stats = database.ref(`stats/${el.dataset.count}`)
+            .on('value', (snapshot) => {
+                updateValue(el, snapshot)
+                transition(el)
+            })
     }
 
     function updateValue(el, snapshot) {
-        el.textContent = snapshot.val()
+        el.textContent = snapshot.val().Count
     }
 
     function transition(el) {
